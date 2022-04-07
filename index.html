@@ -275,7 +275,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 00:34:02" itemprop="dateModified" datetime="2022-04-08T00:34:02+08:00">2022-04-08</time>
+      <time title="Modified: 2022-04-08 00:36:51" itemprop="dateModified" datetime="2022-04-08T00:36:51+08:00">2022-04-08</time>
     </span>
 
   
@@ -298,7 +298,7 @@
 <h4 id="2-3-更换语言"><a href="#2-3-更换语言" class="headerlink" title="2.3 更换语言"></a>2.3 更换语言</h4><p>至此系统差不多收拾妥当了，有些不要的软件去设置里卸载就可以了</p>
 <h3 id="3-从git到hexo的安装和部署"><a href="#3-从git到hexo的安装和部署" class="headerlink" title="3 从git到hexo的安装和部署"></a>3 从<code>git</code>到<code>hexo</code>的安装和部署</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install npm</span><br><span class="line">sudo npm install -g n</span><br><span class="line">sudo n stable </span><br><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>在桌面创建一个文件夹<code>blog</code><br>然后<code>cd Desktop</code><br>这里记得挂科学上网</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo g</span><br><span class="line">hexo server</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>至此打开浏览器，访问<code>localhost:4000</code><br>应该就能看到初始页面了</p>
 <h3 id="4-联动Github"><a href="#4-联动Github" class="headerlink" title="4 联动Github"></a>4 联动Github</h3><h4 id="4-1-在Github创建Repository"><a href="#4-1-在Github创建Repository" class="headerlink" title="4.1 在Github创建Repository"></a>4.1 在Github创建Repository</h4><p>创建一个叫FailedFailure.github.io的Repository</p>
 <h4 id="4-2-安装Curl"><a href="#4-2-安装Curl" class="headerlink" title="4.2 安装Curl"></a>4.2 安装Curl</h4><p><code>sudo apt install curl</code></p>
