@@ -29,7 +29,7 @@
 <meta property="og:description" content="从零开始的hexo更博生活1 虚拟机安装1.1 下载VMwarehttps:&#x2F;&#x2F;customerconnect.vmware.com&#x2F;en&#x2F;downloads&#x2F;details?downloadGroup&#x3D;WKST-PLAYER-1623-NEW&amp;productId&#x3D;1039&amp;rPId&#x3D;85399 1.2 下载映像https:&#x2F;&#x2F;ubuntu.com&#x2F;download&#x2F;desktop">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-07T00:48:17.000Z">
-<meta property="article:modified_time" content="2022-04-07T17:12:13.415Z">
+<meta property="article:modified_time" content="2022-04-07T17:13:02.126Z">
 <meta property="article:author" content="jdh">
 <meta property="article:tag" content="摆烂">
 <meta name="twitter:card" content="summary">
@@ -204,7 +204,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 01:12:13" itemprop="dateModified" datetime="2022-04-08T01:12:13+08:00">2022-04-08</time>
+      <time title="Modified: 2022-04-08 01:13:02" itemprop="dateModified" datetime="2022-04-08T01:13:02+08:00">2022-04-08</time>
     </span>
 
   
@@ -240,7 +240,7 @@
 <h4 id="4-6-更换主题"><a href="#4-6-更换主题" class="headerlink" title="4.6 更换主题"></a>4.6 更换主题</h4><p>工程量略大，暂时挖个坑</p>
 <h4 id="4-7-删除helloworld-md，加入自己的内容"><a href="#4-7-删除helloworld-md，加入自己的内容" class="headerlink" title="4.7 删除helloworld.md，加入自己的内容"></a>4.7 删除<code>helloworld.md</code>，加入自己的内容</h4><p>先把预先写好的<code>md</code>文件准备好，复制，在项目目录下<code>hexo new post &#39;example&#39;</code><br>就新建好了一个叫<code>example</code>的<code>.md</code>文件，将准备好的内容拷贝到预设的这段代码：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: test</span><br><span class="line">date: 2022-04-07 09:26:25</span><br><span class="line">tags:</span><br><span class="line">-TAGA</span><br><span class="line">-TAGB</span><br></pre></td></tr></table></figure>
-<p>下方即可。（标签添加如上所示）<br>在拥有了第一个文件以后，直接把默认的<code>helloworld.md</code>肃清即可<br>之后如果要删除之前的博客&#x2F;单纯的维护更新也是一样的，<br>删除文件后执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
+<p>下方即可。（标签添加如上所示）<br>在拥有了第一个文件以后，直接把默认的<code>helloworld.md</code>肃清即可<br>之后如果要删除之前的博客&#x2F;单纯的维护更新也是一样的，<br>删除&#x2F;修改文件后执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></p>
 <h4 id="4-8-备份设置"><a href="#4-8-备份设置" class="headerlink" title="4.8 备份设置"></a>4.8 备份设置</h4><p>考虑到更换电脑后这些博客可能全部寄了，将文件全部保存至新的<code>Repository</code><br>在Github上新建一个<code>Private</code>的<code>Repository</code>，用来存放代码<br>同时在桌面目录执行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init blog</span><br><span class="line">cd blog</span><br><span class="line">git remote add origin https://github.com/FailedFailure/blogbackup.git</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 <p>至此可以查看<code>git</code>仓库部署情况<br>然后可以使用</p>
