@@ -194,7 +194,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-04-08 08:00:00 / Modified: 12:04:28" itemprop="dateCreated datePublished" datetime="2022-04-08T08:00:00+08:00">2022-04-08</time>
+      <time title="Created: 2022-04-08 08:00:00 / Modified: 13:31:11" itemprop="dateCreated datePublished" datetime="2022-04-08T08:00:00+08:00">2022-04-08</time>
     </span>
 
   
@@ -214,12 +214,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br></pre></td></tr></table></figure>
 <p>如果报错“无法安全地用该源进行更新”，那么是ca证书过期了<br>将上述源的<code>https</code>全部换成<code>http</code><br>然后<code>sudo apt install ca-certificates</code><br>然后将上述源的<code>http</code>换回<code>https</code><br>最后<code>sudo apt upgrade</code><br>（暂时先改成<code>http</code>，然后用<code>http</code>更新证书<code>ca-certificates</code>，然后再改回<code>https</code>确保平时的安全）</p>
 <h3 id="2-2-安装VMware-tools"><a href="#2-2-安装VMware-tools" class="headerlink" title="2.2 安装VMware-tools"></a>2.2 安装VMware-tools</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt install open-vm-tools-desktop -y</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-更换语言"><a href="#2-3-更换语言" class="headerlink" title="2.3 更换语言"></a>2.3 更换语言</h3><p>至此系统差不多收拾妥当了，有些不要的软件去设置里卸载就可以了</p>
+<h3 id="2-3-更换语言"><a href="#2-3-更换语言" class="headerlink" title="2.3 更换语言"></a>2.3 更换语言</h3><h3 id="2-4-更换时区"><a href="#2-4-更换时区" class="headerlink" title="2.4 更换时区"></a>2.4 更换时区</h3><p>至此系统差不多收拾妥当了，有些不要的软件去设置里卸载就可以了</p>
 <h2 id="3-从git到hexo的安装和部署"><a href="#3-从git到hexo的安装和部署" class="headerlink" title="3 从git到hexo的安装和部署"></a>3 从<code>git</code>到<code>hexo</code>的安装和部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install npm</span><br><span class="line">sudo npm install -g n</span><br><span class="line">sudo n stable </span><br><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>在桌面创建一个文件夹<code>blog</code><br>然后<code>cd Desktop</code><br>这里记得挂科学上网</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>至此打开浏览器，访问<code>localhost:4000</code><br>应该就能看到初始页面了</p>
-<h2 id="4-联动Github"><a href="#4-联动Github" class="headerlink" title="4 联动Github"></a>4 联动Github</h2><h3 id="4-1-在Github创建Repository"><a href="#4-1-在Github创建Repository" class="headerlink" title="4.1 在Github创建Repository"></a>4.1 在Github创建Repository</h3><p>创建一个叫FailedFailure.github.io的Repository</p>
+<h2 id="4-部署博客"><a href="#4-部署博客" class="headerlink" title="4 部署博客"></a>4 部署博客</h2><h3 id="4-1-在Github创建Repository"><a href="#4-1-在Github创建Repository" class="headerlink" title="4.1 在Github创建Repository"></a>4.1 在Github创建Repository</h3><p>创建一个叫FailedFailure.github.io的Repository</p>
 <h3 id="4-2-安装Curl"><a href="#4-2-安装Curl" class="headerlink" title="4.2 安装Curl"></a>4.2 安装Curl</h3><p><code>sudo apt install curl</code></p>
 <h3 id="4-3-利用gh联动Github"><a href="#4-3-利用gh联动Github" class="headerlink" title="4.3 利用gh联动Github"></a>4.3 利用<code>gh</code>联动Github</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg</span><br><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot; | sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install gh</span><br><span class="line">gh auth login</span><br></pre></td></tr></table></figure>
 <p>记录下临时安全码，打开浏览器登录即可联动</p>
@@ -240,8 +240,37 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;feat: &quot;</span><br></pre></td></tr></table></figure>
 <p>将内容从工作区调转到暂存区，最后准备<code>push</code><br>这里的<code>feat: </code>里的内容是更新的备注，最后会显示在Github的文件旁边<br>第一次时应执行<code>git push --set-upstream origin master</code><br>就获得了我们需要的文件<br>后续更改时<code>push</code>以外的内容不变，最后一步仅需<code>git push</code>即可<br>值得一提的是，如需更改这个备份用仓库的名称<br>在Github更改完名称后<br>记得执行<code>git remote set-url origin https://github.com/FailedFailure/blogbackup</code><br>这里<code>blogbackup</code>是我后来改的名字，Github改成什么对应什么就行<br>需要注意的是，<code>theme</code>的内容之前已经作为一个独立的<code>Repository</code><br>储存在了<a target="_blank" rel="noopener" href="https://github.com/FailedFailure/hexo-theme-next">https://github.com/FailedFailure/hexo-theme-next</a><br>如果需要修改主题内容，需单独‵cd .&#x2F;themes&#x2F;next<code> 然后</code>git&#96;一份</p>
 <p>值得一提的是，如果你的<code>&quot;feat: &quot;</code>内容写错了<br>可以通过<code>git reset --soft HEAD^</code>来肃清<br>或是<code>git commit --amend</code>来更改</p>
-<h2 id="5-杂七杂八的小问题"><a href="#5-杂七杂八的小问题" class="headerlink" title="5 杂七杂八的小问题"></a>5 杂七杂八的小问题</h2><h3 id="5-1-Repository内日期修改"><a href="#5-1-Repository内日期修改" class="headerlink" title="5.1 Repository内日期修改"></a>5.1 <code>Repository</code>内日期修改</h3><p>这里还遇到一个怪问题，主<code>Repository</code>中此篇文章的日期错了（06 -&gt; 07）<br>开了个<code>test.md</code>后发现似乎是时区错误</p>
-<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>修改主<code>Repository</code>中此篇文章的日期（06 -&gt; 07）<br>Debug全篇</p>
+<h3 id="4-9-购买域名"><a href="#4-9-购买域名" class="headerlink" title="4.9 购买域名"></a>4.9 购买域名</h3><p>我是在阿里云购入的，实名认证以后<br><a target="_blank" rel="noopener" href="https://dc.console.aliyun.com/next/index">https://dc.console.aliyun.com/next/index</a><br>管理域名解析：</p>
+<table>
+<thead>
+<tr>
+<th>记录类型</th>
+<th>主机记录</th>
+<th>解析线路</th>
+<th>记录值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CNAME</td>
+<td>www</td>
+<td>默认</td>
+<td>failedfailure.github.io</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>默认</td>
+<td>192.30.252.153</td>
+</tr>
+<tr>
+<td>A</td>
+<td>@</td>
+<td>默认</td>
+<td>192.30.252.154</td>
+</tr>
+</tbody></table>
+<h2 id="5-杂七杂八的小问题"><a href="#5-杂七杂八的小问题" class="headerlink" title="5 杂七杂八的小问题"></a>5 杂七杂八的小问题</h2><h3 id="5-1-Repository内日期修改"><a href="#5-1-Repository内日期修改" class="headerlink" title="5.1 Repository内日期修改"></a>5.1 <code>Repository</code>内日期修改</h3><p>这里还遇到一个怪问题，主<code>Repository</code>中此篇文章的日期错了（06 -&gt; 07）<br>开了个<code>test.md</code>后发现似乎是时区错误<br>将系统时间调整为CST后再试，目前已修正</p>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>Debug全篇</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://gyrojeff.top/">https://gyrojeff.top/</a></p>
 <p><a target="_blank" rel="noopener" href="https://oreste.moe/">https://oreste.moe/</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
