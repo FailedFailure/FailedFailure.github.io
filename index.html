@@ -200,7 +200,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 11:20:54" itemprop="dateModified" datetime="2022-04-08T11:20:54+08:00">2022-04-08</time>
+      <time title="Modified: 2022-04-08 11:48:00" itemprop="dateModified" datetime="2022-04-08T11:48:00+08:00">2022-04-08</time>
     </span>
 
   
@@ -235,13 +235,18 @@
 <h3 id="4-5-Github修改默认Branch"><a href="#4-5-Github修改默认Branch" class="headerlink" title="4.5 Github修改默认Branch"></a>4.5 Github修改默认<code>Branch</code></h3><p>改成<code>master</code><br>并在<code>Settings</code>里找到<code>Pages</code>,修改<code>Branch</code></p>
 <h3 id="4-6-博客内容初始化"><a href="#4-6-博客内容初始化" class="headerlink" title="4.6 博客内容初始化"></a>4.6 博客内容初始化</h3><h4 id="4-6-1-删除默认hello-world-md"><a href="#4-6-1-删除默认hello-world-md" class="headerlink" title="4.6.1 删除默认hello-world.md"></a>4.6.1 删除默认<code>hello-world.md</code></h4><p>先把预先写好的<code>md</code>文件准备好（例如此篇）作为第一篇，复制全文内容，在项目目录下<code>hexo new post &#39;example&#39;</code><br>就新建好了一个叫<code>example</code>的<code>.md</code>文件，将准备好的内容拷贝到预设的这段代码：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: test</span><br><span class="line">date: 2022-04-07 09:26:25</span><br><span class="line">tags:</span><br><span class="line">-TAGA</span><br><span class="line">-TAGB</span><br></pre></td></tr></table></figure>
-<p>下方即可。（标签添加如上所示）<br>在拥有了第一个文件以后，直接把默认的<code>helloworld.md</code>肃清即可</p>
-<h3 id="4-7-更换主题"><a href="#4-7-更换主题" class="headerlink" title="4.7 更换主题"></a>4.7 更换主题</h3><p>这里采用的是<code>NexT</code>，去Github上<code>fork</code>一份<br><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a><br>然后，<code>cd</code>到<code>blog</code>文件夹下，执行<br><code>git submodule add https://github.com/FailedFailure/hexo-theme-next ./themes/next</code><br>然后分别调整内外<code>_config.yml</code>即可自定义博客版面等内容<br>具体设置可见后续博客</p>
+<p>的下方即可。（标签添加如上所示）<br>在拥有了第一个文件以后，直接把默认的<code>helloworld.md</code>肃清即可</p>
+<h4 id="4-6-2-上传新的md"><a href="#4-6-2-上传新的md" class="headerlink" title="4.6.2 上传新的md"></a>4.6.2 上传新的<code>md</code></h4><p>现在有了新的页面，只需要执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这里的<code>hexo g</code>是生成静态页面<br><code>hexo d</code>则是将其<code>deploy</code>到博客页面上<br>如果发现某些页面没有清除，可能是缓存问题<br>可执行<code>hexo clean</code>来解决</p>
+<h3 id="4-7-更换主题"><a href="#4-7-更换主题" class="headerlink" title="4.7 更换主题"></a>4.7 更换主题</h3><p>现在我们有了第一篇博客，可是默认主题未免不太美观<br>这里采用的是<code>NexT</code>，去Github上<code>fork</code>一份<br><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a><br>然后，<code>cd</code>到<code>blog</code>文件夹下，执行<br><code>git submodule add https://github.com/FailedFailure/hexo-theme-next ./themes/next</code><br>然后分别调整内外<code>_config.yml</code>即可自定义博客版面等内容<br>具体设置可见后续博客</p>
 <h3 id="4-8-备份设置"><a href="#4-8-备份设置" class="headerlink" title="4.8 备份设置"></a>4.8 备份设置</h3><p>考虑到更换电脑后这些博客可能全部寄了，将文件全部保存至新的<code>Repository</code><br>在Github上新建一个<code>Private</code>的<code>Repository</code>，用来存放代码<br>同时在桌面目录执行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init blog</span><br><span class="line">cd blog</span><br><span class="line">git remote add origin https://github.com/FailedFailure/blogbackup.git</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 <p>至此可以查看<code>git</code>仓库部署情况<br>然后可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;feat: &quot;</span><br></pre></td></tr></table></figure>
 <p>将内容从工作区调转到暂存区，最后准备<code>push</code><br>这里的<code>feat: </code>里的内容是更新的备注，最后会显示在Github的文件旁边<br>第一次时应执行<code>git push --set-upstream origin master</code><br>就获得了我们需要的文件<br>后续更改时<code>push</code>以外的内容不变，最后一步仅需<code>git push</code>即可<br>值得一提的是，如需更改这个备份用仓库的名称<br>在Github更改完名称后<br>记得执行<code>git remote set-url origin https://github.com/FailedFailure/blogbackup</code><br>这里<code>blogbackup</code>是我后来改的名字，Github改成什么对应什么就行<br>需要注意的是，<code>theme</code>的内容之前已经作为一个独立的<code>Repository</code><br>储存在了<a target="_blank" rel="noopener" href="https://github.com/FailedFailure/hexo-theme-next">https://github.com/FailedFailure/hexo-theme-next</a><br>如果需要修改主题内容，需单独‵cd .&#x2F;themes&#x2F;next<code> 然后</code>git&#96;一份</p>
+<p>值得一提的是，如果你的<code>&quot;feat: &quot;</code>内容写错了<br>可以通过<code>git reset --soft HEAD^</code>来肃清<br>或是<code>git commit --amend</code>来更改</p>
+<h2 id="5-杂七杂八的小问题"><a href="#5-杂七杂八的小问题" class="headerlink" title="5 杂七杂八的小问题"></a>5 杂七杂八的小问题</h2><p>这里还遇到一个怪问题，主<code>Repository</code>中此篇文章的日期错了（06 -&gt; 07）</p>
 <h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>修改主<code>Repository</code>中此篇文章的日期（06 -&gt; 07）<br>Debug全篇</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://gyrojeff.top/">https://gyrojeff.top/</a></p>
 <p><a target="_blank" rel="noopener" href="https://oreste.moe/">https://oreste.moe/</a></p>
@@ -250,6 +255,7 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21808961/article/details/84476504">https://blog.csdn.net/qq_21808961/article/details/84476504</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dxxzst/article/details/76135935">https://blog.csdn.net/dxxzst/article/details/76135935</a></p>
 <p><a target="_blank" rel="noopener" href="https://gyrojeff.moe/2020/09/11/git%E7%9A%84submodule%E7%94%A8%E6%B3%95/">https://gyrojeff.moe/2020/09/11/git%E7%9A%84submodule%E7%94%A8%E6%B3%95/</a></p>
+<p><a target="_blank" rel="noopener" href="https://gyrojeff.moe/2020/09/11/git%E6%92%A4%E9%94%80commit%E5%92%8C%E6%9B%B4%E6%94%B9commit%E6%B3%A8%E9%87%8A%E7%9A%84%E6%96%B9%E6%B3%95/">https://gyrojeff.moe/2020/09/11/git%E6%92%A4%E9%94%80commit%E5%92%8C%E6%9B%B4%E6%94%B9commit%E6%B3%A8%E9%87%8A%E7%9A%84%E6%96%B9%E6%B3%95/</a></p>
 <p>在写References的时候发现URL过于冗余，咨询大佬后也参考了：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gxizit/article/details/108190710">https://blog.csdn.net/gxizit/article/details/108190710</a></p>
 
