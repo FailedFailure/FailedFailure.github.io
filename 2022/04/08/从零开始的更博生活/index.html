@@ -29,7 +29,7 @@
 <meta property="og:description" content="从零开始的更博生活1 虚拟机安装1.1 下载VMwarehttps:&#x2F;&#x2F;customerconnect.vmware.com&#x2F;en&#x2F;downloads&#x2F;details?downloadGroup&#x3D;WKST-PLAYER-1623-NEW&amp;productId&#x3D;1039&amp;rPId&#x3D;85399 1.2 下载映像https:&#x2F;&#x2F;ubuntu.com&#x2F;download&#x2F;desktop  1.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-08T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-08T07:52:26.813Z">
+<meta property="article:modified_time" content="2022-04-12T06:45:33.701Z">
 <meta property="article:author" content="jdh">
 <meta property="article:tag" content="零基础">
 <meta property="article:tag" content="博客搭建">
@@ -214,9 +214,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-04-08 08:00:00 / Modified: 15:52:26" itemprop="dateCreated datePublished" datetime="2022-04-08T08:00:00+08:00">2022-04-08</time>
+      <time title="Created: 2022-04-08 08:00:00" itemprop="dateCreated datePublished" datetime="2022-04-08T08:00:00+08:00">2022-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-12 14:45:33" itemprop="dateModified" datetime="2022-04-12T14:45:33+08:00">2022-04-12</time>
     </span>
 
   
@@ -232,24 +238,33 @@
         <h1 id="从零开始的更博生活"><a href="#从零开始的更博生活" class="headerlink" title="从零开始的更博生活"></a>从零开始的更博生活</h1><h2 id="1-虚拟机安装"><a href="#1-虚拟机安装" class="headerlink" title="1 虚拟机安装"></a>1 虚拟机安装</h2><h3 id="1-1-下载VMware"><a href="#1-1-下载VMware" class="headerlink" title="1.1 下载VMware"></a>1.1 下载VMware</h3><p><a target="_blank" rel="noopener" href="https://customerconnect.vmware.com/en/downloads/details?downloadGroup=WKST-PLAYER-1623-NEW&amp;productId=1039&amp;rPId=85399">https://customerconnect.vmware.com/en/downloads/details?downloadGroup=WKST-PLAYER-1623-NEW&amp;productId=1039&amp;rPId=85399</a></p>
 <h3 id="1-2-下载映像"><a href="#1-2-下载映像" class="headerlink" title="1.2 下载映像"></a>1.2 下载映像</h3><p><a target="_blank" rel="noopener" href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a> </p>
 <h3 id="1-3-创建虚拟机"><a href="#1-3-创建虚拟机" class="headerlink" title="1.3 创建虚拟机"></a>1.3 创建虚拟机</h3><p>新建虚拟机向导中将映像插入，在全名（账户名）、用户名（电脑名）中填写<code>jdh</code>，密码就不公布了</p>
-<h2 id="2-虚拟机调试"><a href="#2-虚拟机调试" class="headerlink" title="2 虚拟机调试"></a>2 虚拟机调试</h2><h3 id="2-1-更换apt源"><a href="#2-1-更换apt源" class="headerlink" title="2.1 更换apt源"></a>2.1 更换<code>apt</code>源</h3><p>根据系统指示出了新手村以后，把默认<code>apt</code>源换掉<br><code>sudo nano /etc/apt/sources.list</code> 查看源</p>
+<h2 id="2-虚拟机调试"><a href="#2-虚拟机调试" class="headerlink" title="2 虚拟机调试"></a>2 虚拟机调试</h2><h3 id="2-1-更换apt源"><a href="#2-1-更换apt源" class="headerlink" title="2.1 更换apt源"></a>2.1 更换<code>apt</code>源</h3><p>根据系统指示出了新手村以后，把默认<code>apt</code>源换掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>查看源</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-<p>如果报错“无法安全地用该源进行更新”，那么是ca证书过期了<br>将上述源的<code>https</code>全部换成<code>http</code><br>然后<code>sudo apt install ca-certificates</code><br>然后将上述源的<code>http</code>换回<code>https</code><br>最后<code>sudo apt upgrade</code><br>（暂时先改成<code>http</code>，然后用<code>http</code>更新证书<code>ca-certificates</code>，然后再改回<code>https</code>确保平时的安全）</p>
+<p>如果报错“无法安全地用该源进行更新”，那么是ca证书过期了<br>将上述源的<code>https</code>全部换成<code>http</code><br>然后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ca-certificates</span><br></pre></td></tr></table></figure>
+<p>然后将上述源的<code>http</code>换回<code>https</code><br>最后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+<p>（暂时先改成<code>http</code>，然后用<code>http</code>更新证书<code>ca-certificates</code>，然后再改回<code>https</code>确保平时的安全）</p>
 <h3 id="2-2-安装VMware-tools"><a href="#2-2-安装VMware-tools" class="headerlink" title="2.2 安装VMware-tools"></a>2.2 安装VMware-tools</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt install open-vm-tools-desktop -y</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
 <h3 id="2-3-更换语言"><a href="#2-3-更换语言" class="headerlink" title="2.3 更换语言"></a>2.3 更换语言</h3><h3 id="2-4-更换时区"><a href="#2-4-更换时区" class="headerlink" title="2.4 更换时区"></a>2.4 更换时区</h3><p>至此系统差不多收拾妥当了，有些不要的软件去设置里卸载就可以了</p>
 <h2 id="3-从git到hexo的安装和部署"><a href="#3-从git到hexo的安装和部署" class="headerlink" title="3 从git到hexo的安装和部署"></a>3 从<code>git</code>到<code>hexo</code>的安装和部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install npm</span><br><span class="line">sudo npm install -g n</span><br><span class="line">sudo n stable </span><br><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>在桌面创建一个文件夹<code>blog</code><br>然后<code>cd Desktop</code><br>这里记得挂科学上网</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>在桌面创建一个文件夹<code>blog</code><br>然后记得挂科学上网</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd Desktop</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>至此打开浏览器，访问<code>localhost:4000</code><br>应该就能看到初始页面了</p>
 <h2 id="4-部署博客"><a href="#4-部署博客" class="headerlink" title="4 部署博客"></a>4 部署博客</h2><h3 id="4-1-在Github创建Repository"><a href="#4-1-在Github创建Repository" class="headerlink" title="4.1 在Github创建Repository"></a>4.1 在Github创建Repository</h3><p>创建一个叫FailedFailure.github.io的Repository</p>
-<h3 id="4-2-安装Curl"><a href="#4-2-安装Curl" class="headerlink" title="4.2 安装Curl"></a>4.2 安装Curl</h3><p><code>sudo apt install curl</code></p>
+<h3 id="4-2-安装Curl"><a href="#4-2-安装Curl" class="headerlink" title="4.2 安装Curl"></a>4.2 安装Curl</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
+
 <h3 id="4-3-利用gh联动Github"><a href="#4-3-利用gh联动Github" class="headerlink" title="4.3 利用gh联动Github"></a>4.3 利用<code>gh</code>联动Github</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg</span><br><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main&quot; | sudo tee /etc/apt/sources.list.d/github-cli.list &gt; /dev/null</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install gh</span><br><span class="line">gh auth login</span><br></pre></td></tr></table></figure>
 <p>记录下临时安全码，打开浏览器登录即可联动</p>
 <h3 id="4-4-修改-config-yml"><a href="#4-4-修改-config-yml" class="headerlink" title="4.4 修改_config.yml"></a>4.4 修改<code>_config.yml</code></h3><p>将最后三行改成</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: https://github.com/FailedFailure/FailedFailure.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 
 <h3 id="4-5-Github修改默认Branch"><a href="#4-5-Github修改默认Branch" class="headerlink" title="4.5 Github修改默认Branch"></a>4.5 Github修改默认<code>Branch</code></h3><p>改成<code>master</code><br>并在<code>Settings</code>里找到<code>Pages</code>,修改<code>Branch</code></p>
-<h3 id="4-6-博客内容初始化"><a href="#4-6-博客内容初始化" class="headerlink" title="4.6 博客内容初始化"></a>4.6 博客内容初始化</h3><h4 id="4-6-1-删除默认hello-world-md"><a href="#4-6-1-删除默认hello-world-md" class="headerlink" title="4.6.1 删除默认hello-world.md"></a>4.6.1 删除默认<code>hello-world.md</code></h4><p>先把预先写好的<code>md</code>文件准备好（例如此篇）作为第一篇，复制全文内容，在项目目录下<code>hexo new post &#39;example&#39;</code><br>就新建好了一个叫<code>example</code>的<code>.md</code>文件，将准备好的内容拷贝到预设的这段代码：</p>
+<h3 id="4-6-博客内容初始化"><a href="#4-6-博客内容初始化" class="headerlink" title="4.6 博客内容初始化"></a>4.6 博客内容初始化</h3><h4 id="4-6-1-删除默认hello-world-md"><a href="#4-6-1-删除默认hello-world-md" class="headerlink" title="4.6.1 删除默认hello-world.md"></a>4.6.1 删除默认<code>hello-world.md</code></h4><p>先把预先写好的<code>md</code>文件准备好（例如此篇）作为第一篇，复制全文内容，在项目目录下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &#x27;example&#x27;</span><br></pre></td></tr></table></figure>
+<p>就新建好了一个叫<code>example</code>的<code>.md</code>文件，将准备好的内容拷贝到预设的这段代码：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: test</span><br><span class="line">date: 2022-04-07 09:26:25</span><br><span class="line">tags:</span><br><span class="line">-TAGA</span><br><span class="line">-TAGB</span><br></pre></td></tr></table></figure>
 <p>的下方即可。（标签添加如上所示）<br>在拥有了第一个文件以后，直接把默认的<code>helloworld.md</code>肃清即可</p>
 <h4 id="4-6-2-上传新的md"><a href="#4-6-2-上传新的md" class="headerlink" title="4.6.2 上传新的md"></a>4.6.2 上传新的<code>md</code></h4><p>现在有了新的页面，只需要执行</p>
@@ -260,8 +275,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init blog</span><br><span class="line">cd blog</span><br><span class="line">git remote add origin https://github.com/FailedFailure/blogbackup.git</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
 <p>至此可以查看<code>git</code>仓库部署情况<br>然后可以使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;feat: &quot;</span><br></pre></td></tr></table></figure>
-<p>将内容从工作区调转到暂存区，最后准备<code>push</code><br>这里的<code>feat: </code>里的内容是更新的备注，最后会显示在Github的文件旁边<br>第一次时应执行<code>git push --set-upstream origin master</code><br>就获得了我们需要的文件<br>后续更改时<code>push</code>以外的内容不变，最后一步仅需<code>git push</code>即可<br>值得一提的是，如需更改这个备份用仓库的名称<br>在Github更改完名称后<br>记得执行<code>git remote set-url origin https://github.com/FailedFailure/blogbackup</code><br>这里<code>blogbackup</code>是我后来改的名字，Github改成什么对应什么就行<br>需要注意的是，<code>theme</code>的内容之前已经作为一个独立的<code>Repository</code><br>储存在了<a target="_blank" rel="noopener" href="https://github.com/FailedFailure/hexo-theme-next">https://github.com/FailedFailure/hexo-theme-next</a><br>如果需要修改主题内容，需单独‵cd .&#x2F;themes&#x2F;next<code> 然后</code>git&#96;一份</p>
-<p>值得一提的是，如果你的<code>&quot;feat: &quot;</code>内容写错了<br>可以通过<code>git reset --soft HEAD^</code>来肃清<br>或是<code>git commit --amend</code>来更改</p>
+<p>将内容从工作区调转到暂存区，最后准备<code>push</code><br>这里的<code>feat: </code>里的内容是更新的备注，最后会显示在Github的文件旁边<br>第一次时应执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin master</span><br></pre></td></tr></table></figure>
+<p>就获得了我们需要的文件<br>后续更改时<code>push</code>以外的内容不变，最后一步仅需</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>即可<br>值得一提的是，如需更改这个备份用仓库的名称<br>在Github更改完名称后<br>记得执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin https://github.com/FailedFailure/blogbackup</span><br></pre></td></tr></table></figure>
+<p>这里<code>blogbackup</code>是我后来改的名字，Github改成什么对应什么就行<br>需要注意的是，<code>theme</code>的内容之前已经作为一个独立的<code>Repository</code><br>储存在了<a target="_blank" rel="noopener" href="https://github.com/FailedFailure/hexo-theme-next">https://github.com/FailedFailure/hexo-theme-next</a><br>如果需要修改主题内容，需单独‵cd .&#x2F;themes&#x2F;next<code> 然后</code>git&#96;一份</p>
+<p>值得一提的是，如果你的<code>&quot;feat: &quot;</code>内容写错了<br>可以通过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^</span><br></pre></td></tr></table></figure>
+<p>来肃清<br>或是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+<p>来更改</p>
 <h3 id="4-9-购买域名"><a href="#4-9-购买域名" class="headerlink" title="4.9 购买域名"></a>4.9 购买域名</h3><p>我是在阿里云购入的，实名认证以后<br><a target="_blank" rel="noopener" href="https://dc.console.aliyun.com/next/index">https://dc.console.aliyun.com/next/index</a><br>管理域名解析：</p>
 <table>
 <thead>
